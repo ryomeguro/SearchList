@@ -1,0 +1,24 @@
+{
+    "name" : "Search word list up",
+    "version" : "1.0.0",
+    "icons" : {
+        "48": "icon_48.png"
+    },
+    "manifest_version" : 2,
+    "description" : "Googleで検索したワードを保存します。それらをクリップボードにコピーできます。",
+    "content_scripts": [{
+        "matches": ["https://www.google.com/search?*"],
+        "js": [
+          "date.js",
+          "content.js"
+        ]
+      }],
+    "browser_action" : {
+        "default_icon" : { "48" : "icon_48.png"},
+        "default_title" : "SearchList",
+        "default_popup" : "popup.html"
+    },
+    "permissions" : [
+        "storage"
+    ]
+}
